@@ -1,0 +1,21 @@
+{
+  "root":true,
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules":{
+    "react/react-in-jsx-scope": "off",
+    "react/props-types": "off",
+    "no-unused-vars": "off",
+    "no-console": "off",
+    "no-debugger": "off",
+    "no-undef": "off",
+    "no-alert": "off",
+    "react/no-unescaped-entities":"off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off", 
+    "@typescript-eslint/no-unused-vars": "off",
+    "react-hooks/exhaustive-deps": "warn", // Adjust dependency array checks
+    "@typescript-eslint/no-empty-interface": "off",// Allow empty interfaces
+    "@typescript-eslint/no-empty-object-type":"warn"
+
+  }
+}
