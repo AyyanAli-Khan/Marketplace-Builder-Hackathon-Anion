@@ -42,8 +42,10 @@ export default function Page() {
             <React.Fragment key={item.name}>
               <div className="col-span-3 pt-5">
                 <div className="h-auto md:h-[180px] w-full flex flex-row items-center gap-4">
-                  <Image src={item.image_url}
+                  <img src={item.image_url}
                     alt={item.name}
+                    // height={100}
+                    // width={100}
                     className="h-[100px] w-[100px] md:h-full md:w-1/2 object-cover"
                   />
                   <div className="p-[10px] w-full flex flex-col justify-between text-left">

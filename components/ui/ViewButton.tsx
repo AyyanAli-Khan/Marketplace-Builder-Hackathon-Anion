@@ -23,7 +23,7 @@ import Link from 'next/link';
 const ViewButtton = () => {
   return (
     <div>
-      <Link href="/allproductlist">
+      <Link href="/allproduct">
       <Button className="text-h5 text-black bg-muted hover:bg-accent mt-5 md:mt-10 font-[300] rounded-none py-[24px] leading-none px-[32px]">
         View Collection
       </Button>

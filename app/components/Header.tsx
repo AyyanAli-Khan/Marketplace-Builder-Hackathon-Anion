@@ -4,10 +4,14 @@ import { Search, X } from "lucide-react";
 import React from "react";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useCart } from "@/context/CartContext";
+import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { headers } from "next/headers";
 
 const Header = () => {
+
+  const {cart} = useCart()
+
   const navLinks = [
     { name: "Plant pots" ,
       herf:"/"
@@ -60,6 +64,11 @@ const Header = () => {
           />
         
         </Link>
+        {cart.length > 0 && (
+              <Badge className="absolute top-2.5 right-12 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+                {cart.length}
+              </Badge>
+            )}
           <Image
             className="cursor-pointer"
             src="/icons/user-avatar.png"
