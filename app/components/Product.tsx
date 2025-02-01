@@ -15,7 +15,6 @@ interface PROPS {
     width: string;
     depth: string;
   };
-  // quantity: number,
 }
 
 const ProductPage = ({
@@ -35,8 +34,6 @@ const ProductPage = ({
       image_url: image_url,
       quantity: quantity,
     });
-
-    alert("item add to cart");
   };
 
   const handleUpdateQuantity = () => {

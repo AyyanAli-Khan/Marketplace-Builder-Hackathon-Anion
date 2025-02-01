@@ -9,37 +9,26 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
 const Header = () => {
+  const { cart } = useCart();
 
-  const {cart} = useCart()
+  
 
   const navLinks = [
-    { name: "Plant pots" ,
-      herf:"/"
+    { name: "Plant pots", herf: "/allproduct" },
+    { name: "Ceramics", herf: "/allproduct" },
+    { name: "Tables", herf: "/allproduct" },
+    { name: "Chairs", herf: "/allproduct" },
+    { name: "Crockery", herf: "/allproduct" },
+    { name: "Tableware", herf: "/allproduct" },
+    { name: "Cutlery", herf: "/allproduct" },
+    {
+      name: "About us",
+      herf: "/about",
     },
-    { name: "Ceramics"  ,
-      herf:"/"},
-    { name: "Tables"  ,
-      herf:"/"},
-    { name: "Chairs" ,
-      herf:"/" },
-    { name: "Crockery" ,
-      herf:"/" },
-    { name: "Tableware" ,
-      herf:"/" },
-    { name: "Cutlery"  ,
-      herf:"/"},
-      {
-     name:"About page",
-        herf:"/about"
-      },
-      {
-        name:"All Product List Page",
-        herf:"/allproductlist"
-      },
-      {
-        name:"Product Page",
-        herf:"/product"
-      },
+    {
+      name: "All Products",
+      herf: "/allproduct",
+    },
   ];
 
   return (
@@ -50,25 +39,26 @@ const Header = () => {
         <Search height={20} width={20} className="cursor-pointer" />
 
         {/* Center: Logo */}
+        <Link href={"/"}>
         <h1 className="font-clash font-[400] text-h3 cursor-pointer">Anino</h1>
+        </Link>
 
         {/* Right: Desktop Actions (Unchanged) */}
         <div className="hidden md:flex items-center gap-6">
-        <Link href='/cart'>
-        <Image
-            className="cursor-pointer"
-            src="/icons/shoping-cart.png"
-            alt="shopping-cart"
-            height={20}
-            width={20}
-          />
-        
-        </Link>
-        {cart.length > 0 && (
-              <Badge className="absolute top-2.5 right-12 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
-                {cart.length}
-              </Badge>
-            )}
+          <Link href="/cart">
+            <Image
+              className="cursor-pointer"
+              src="/icons/shoping-cart.png"
+              alt="shopping-cart"
+              height={20}
+              width={20}
+            />
+          </Link>
+          {cart.length > 0 && (
+            <Badge className="absolute top-2.5 right-12 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+              {cart.length}
+            </Badge>
+          )}
           <Image
             className="cursor-pointer"
             src="/icons/user-avatar.png"
@@ -101,15 +91,28 @@ const Header = () => {
 
               {/* Mobile Navigation Links */}
               <div className="flex flex-col space-y-4">
+                <div className="mt-2">
+                <Link href="/cart">
+                  <Image
+                    className="cursor-pointer"
+                    src="/icons/shoping-cart.png"
+                    alt="shopping-cart"
+                    height={20}
+                    width={20}
+                  />
+                </Link>
+                {cart.length > 0 && (
+                  <Badge className="absolute top-14 left-11 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+                    {cart.length}
+                  </Badge>
+                )}
+                </div>
                 {navLinks.map((item, index) => (
-                 <Link href={item.herf}
-                 key={index}>
-                   <h5
-                    className="cursor-pointer text-base text-[#726E8D] hover:text-black"
-                  >
-                    {item.name}
-                  </h5>
-                 </Link>
+                  <Link href={item.herf} key={index}>
+                    <h5 className="cursor-pointer text-base text-[#726E8D] hover:text-black">
+                      {item.name}
+                    </h5>
+                  </Link>
                 ))}
               </div>
             </SheetContent>
@@ -125,12 +128,9 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-[40px]">
           {navLinks.map((item, index) => (
             <Link href={item.herf} key={index}>
-                <h5
-             
-              className="cursor-pointer text-h5 text-[#726E8D]"
-            >
-              {item.name}
-            </h5>
+              <h5 className="cursor-pointer text-h5 hover:text-primary transition-all ease-linear text-[#726E8D]">
+                {item.name}
+              </h5>
             </Link>
           ))}
         </div>

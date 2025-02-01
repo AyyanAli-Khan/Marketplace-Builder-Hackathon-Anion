@@ -11,25 +11,22 @@ import Link from "next/link";
 
 const Headerv2 = () => {
   const { cart } = useCart();
+
   const navLinks = [
-    { name: "Plant pots", herf: "/" },
-    { name: "Ceramics", herf: "/" },
-    { name: "Tables", herf: "/" },
-    { name: "Chairs", herf: "/" },
-    { name: "Crockery", herf: "/" },
-    { name: "Tableware", herf: "/" },
-    { name: "Cutlery", herf: "/" },
+    { name: "Plant pots", herf: "/allproduct" },
+    { name: "Ceramics", herf: "/allproduct" },
+    { name: "Tables", herf: "/allproduct" },
+    { name: "Chairs", herf: "/allproduct" },
+    { name: "Crockery", herf: "/allproduct" },
+    { name: "Tableware", herf: "/allproduct" },
+    { name: "Cutlery", herf: "/allproduct" },
     {
-      name: "About page",
+      name: "About us",
       herf: "/about",
     },
     {
-      name: "All Product List Page",
-      herf: "/allproductlist",
-    },
-    {
-      name: "Product Page",
-      herf: "/product",
+      name: "All Products",
+      herf: "/allproduct",
     },
   ];
 
@@ -45,7 +42,9 @@ const Headerv2 = () => {
       <nav className="py-4 px-4 md:py-[25px] md:px-[80px] flex items-center justify-between">
         {/* Logo */}
         <div>
-          <h1 className="text-lg md:text-h3 font-clash font-[200]">Avion</h1>
+          <Link href={"/"}>
+            <h1 className="text-lg md:text-h3 font-clash font-[200]">Avion</h1>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -97,11 +96,18 @@ const Headerv2 = () => {
               alt="search"
               className="h-[16px] w-[16px]"
             />
-            <img
-              src="/icons/shoping-cart.png"
-              alt="shopping-cart"
-              className="h-[16px] w-[16px]"
-            />
+            <Link href={"/cart"}>
+              <img
+                src="/icons/shoping-cart.png"
+                alt="shopping-cart"
+                className="h-[16px] w-[16px]"
+              />
+            </Link>
+            {cart.length > 0 && (
+              <Badge className="absolute top-10 left-80 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+                {cart.length}
+              </Badge>
+            )}
             <img
               src="/icons/user-avatar.png"
               alt="user avatar"
