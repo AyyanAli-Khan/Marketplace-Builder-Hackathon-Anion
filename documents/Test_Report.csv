@@ -1,0 +1,6 @@
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Severity Level,Assigned To,Remarks
+TC001,Validate product detail page,"Navigate to the product URL > Verify product details (name, description, price, images)",Product details displayed correctly,Product details displayed correctly,Passed,Low,-,No issues found
+TC002,Test 'Add to Cart' functionality,Click 'Add to Cart' button on product page > Verify cart contents,Product added to cart successfully,Product added to cart successfully,Passed,Medium,-,Works as expected
+TC003,Check responsive design,Resize browser window > Verify layout adjusts appropriately,Layout adjusts properly to screen size,Layout adjusts properly to screen size,Passed,Medium,-,Test successful
+TC004,Validate navigation links,"Click on various navigation links (e.g., 'About us', 'All Products') > Verify page loads",Navigation links direct to correct pages,Navigation links direct to correct pages,Passed,Low,-,No issues found
+TC005,Test search functionality,Enter a product name in the search bar > Verify search results,Relevant products displayed in search results,Relevant products displayed in search results,Passed,Medium,-,Works as expected
