@@ -45,7 +45,7 @@ const PopularProduct = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 items-center">
         {popularProduct &&
           popularProduct.map((product: PopularProducts, index: number) => (
-            <Link href={"/products/" + product.slug.current} key={index}>
+            <Link  href={"/products/" + product.slug.current} key={index}>
               <NewProductCard
                 src={product.image_url}
                 title={product.name}

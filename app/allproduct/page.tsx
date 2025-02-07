@@ -77,7 +77,7 @@ export default function Page() {
       setFilteredProducts(resp); // Initially show all products
     };
     getProduct();
-  }, []);
+  }, [query]);
 
   return (
     <div className="w-full relative">
@@ -367,8 +367,8 @@ export default function Page() {
 
       <div>
         <div className="grid grid-cols-2 md:px-[80px] md:py-[30px] lg:grid-cols-4 gap-2 md:gap-6 items-center">
-          {filteredProducts.map((product) => (
-            <Link href={"/products/" + product.slug.current}>
+          {filteredProducts.map((product,index) => (
+            <Link key={index} href={"/products/" + product.slug.current}>
               <NewProductCard
                 className="cursor-pointer"
                 key={product._id}

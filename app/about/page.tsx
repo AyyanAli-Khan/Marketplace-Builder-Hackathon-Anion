@@ -7,43 +7,34 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Features from "../components/Features";
 import Signup from "../components/Signup";
-import Footer from "../components/Footer";
 import ProductListFooter from "../components/ProductListFooter";
+import { Badge } from "@/components/ui/badge";
+
+import { useCart } from "@/context/CartContext";
 
 export default function Page() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Plant pots" ,
-      herf:"/"
+    { name: "Plant pots", herf: "/allproduct" },
+    { name: "Ceramics", herf: "/allproduct" },
+    { name: "Tables", herf: "/allproduct" },
+    { name: "Chairs", herf: "/allproduct" },
+    { name: "Crockery", herf: "/allproduct" },
+    { name: "Tableware", herf: "/allproduct" },
+    { name: "Cutlery", herf: "/allproduct" },
+    {
+      name: "About us",
+      herf: "/about",
     },
-    { name: "Ceramics"  ,
-      herf:"/"},
-    { name: "Tables"  ,
-      herf:"/"},
-    { name: "Chairs" ,
-      herf:"/" },
-    { name: "Crockery" ,
-      herf:"/" },
-    { name: "Tableware" ,
-      herf:"/" },
-    { name: "Cutlery"  ,
-      herf:"/"},
-      {
-     name:"About page",
-        herf:"/about"
-      },
-      {
-        name:"All Product List Page",
-        herf:"/allproductlist"
-      },
-      {
-        name:"Product Page",
-        herf:"/product"
-      },
+    {
+      name: "All Products",
+      herf: "/allproduct",
+    },
   ];
 
-
+  
+    const { cart } = useCart();
 
   return (
     <div>
@@ -93,6 +84,11 @@ export default function Page() {
                   width={20}
                 />
               </Link>
+              {cart.length > 0 && ( // Show badge only if cart is not empty
+            <Badge className="absolute top-12 right-12 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+              {cart.length}
+            </Badge>
+          )}
 
               <Image
                 className="cursor-pointer"
@@ -165,7 +161,7 @@ export default function Page() {
           customer service
         </h1>
 
-       <Link href='/allproductlist'>
+       <Link href='/allproduct'>
        <Button className="text-sm w-full md:text-h5 md:w-44  text-primary bg-muted  font-[300] rounded-none py-3 md:py-[24px] hover:bg-primary hover:text-muted transition-all ease-linear duration-150 px-6 md:px-[32px]">
           View our products
         </Button>

@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import Image from 'next/image';
 import React from 'react'
 
 export default function GetInTouch() {
@@ -28,10 +29,12 @@ export default function GetInTouch() {
 
       {/* Image Section */}
       <div className="h-[300px] md:h-full w-full md:w-1/2 mt-6 md:mt-0">
-        <img
+        <Image
           src="/images/bigImage.png"
           alt="image"
           className="h-full w-full object-cover"
+          height={20}
+                width={20}
         />
       </div>
     </div>

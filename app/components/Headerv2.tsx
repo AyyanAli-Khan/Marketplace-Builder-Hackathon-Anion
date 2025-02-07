@@ -8,6 +8,7 @@ import {
 import { useCart } from "@/context/CartContext";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import Image from "next/image";
 
 const Headerv2 = () => {
   const { cart } = useCart();
@@ -64,16 +65,20 @@ const Headerv2 = () => {
 
         {/* Icons for Desktop */}
         <div className="hidden md:flex gap-[16px]">
-          <img
+          <Image
             src="/icons/search.png"
             alt="search"
             className="h-[16px] w-[16px]"
+            height={20}
+                width={20}
           />
           <Link href="/cart">
-            <img
+            <Image
               src="/icons/shoping-cart.png"
               alt="shopping-cart"
               className="h-[16px] w-[16px]"
+              height={20}
+                width={20}
             />
           </Link>
           {cart.length > 0 && ( // Show badge only if cart is not empty
@@ -81,25 +86,33 @@ const Headerv2 = () => {
               {cart.length}
             </Badge>
           )}
-          <img
+          <Link href={'/profile'}>  
+          <Image
             src="/icons/user-avatar.png"
             alt="user avatar"
             className="h-[16px] w-[16px]"
+            height={20}
+                width={20}
           />
+          </Link>
         </div>
 
         {/* Hamburger Menu for Mobile */}
         <div className="md:hidden flex items-center">
           <div className="flex items-center md:hidden gap-[16px]">
-            <img
+            <Image
               src="/icons/search.png"
               alt="search"
               className="h-[16px] w-[16px]"
+              height={20}
+                width={20}
             />
             <Link href={"/cart"}>
-              <img
+              <Image
                 src="/icons/shoping-cart.png"
                 alt="shopping-cart"
+                height={20}
+                width={20}
                 className="h-[16px] w-[16px]"
               />
             </Link>
@@ -108,19 +121,25 @@ const Headerv2 = () => {
                 {cart.length}
               </Badge>
             )}
-            <img
+           <Link href={'/profile'}>
+           <Image
               src="/icons/user-avatar.png"
               alt="user avatar"
               className="h-[16px] w-[16px]"
-            />
+              height={20}
+                width={20}
+              />
+            </Link>
           </div>
           <Sheet>
             <SheetTrigger asChild>
               <button className="p-2">
-                <img
+                <Image
                   src="/icons/menu.png"
                   alt="menu"
                   className="h-[16px] w-[16px]"
+                  height={20}
+                width={20}
                 />
               </button>
             </SheetTrigger>

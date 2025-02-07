@@ -5,10 +5,13 @@ import Footer from "../components/Footer";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext"; // Import the useCart hook
 import { CartProduct } from "@/context/CartContext";
-import Image from "next/image"
+import Link from "next/link"
+import Image from 'next/image';
 
 export default function Page() {
   const { cart, removeFromCart, updateQuantity } = useCart(); // Get cart data and functions
+
+
 
   const handleRemoveButton = (productName: string) => {
     removeFromCart(productName)
@@ -42,10 +45,10 @@ export default function Page() {
             <React.Fragment key={item.name}>
               <div className="col-span-3 pt-5">
                 <div className="h-auto md:h-[180px] w-full flex flex-row items-center gap-4">
-                  <img src={item.image_url}
+                  <Image src={item.image_url}
                     alt={item.name}
-                    // height={100}
-                    // width={100}
+                    height={100}
+                    width={100}
                     className="h-[100px] w-[100px] md:h-full md:w-1/2 object-cover"
                   />
                   <div className="p-[10px] w-full flex flex-col justify-between text-left">
@@ -87,9 +90,13 @@ export default function Page() {
             <p className="text-primary font-satoshi font-[200] text-h6">
               Taxes and shipping are calculated at checkout
             </p>
-            <Button className="w-full md:w-auto text-h5 text-white bg-primary hover:bg-secondary hover:text-white mt-3 md:mt-6 font-[300] rounded-none py-[24px] leading-none px-[32px]">
+           <Link href="/checkout">
+           <Button className="w-full md:w-auto text-h5 text-white bg-primary hover:bg-secondary hover:text-white mt-3 md:mt-6 font-[300] rounded-none py-[24px] leading-none px-[32px]"
+            // onClick={(e)=>redirect("/checkout")}
+            >
               Go to checkout
             </Button>
+           </Link>
           </div>
         </div>
       </div>

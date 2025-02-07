@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const HeroSection = () => {
@@ -15,11 +16,13 @@ const HeroSection = () => {
             <h2 className="text-h4 md:text-h2 text-white leading-[150%] w-full md:w-[513px]">
               The furniture brand for the future, with timeless designs
             </h2>
+            <Link href={'/allproduct'}>
             <Button
               className="text-sm md:text-h5 text-white bg-secondary mt-6 md:mt-10 font-[300] rounded-none py-3 md:py-[24px] px-6 md:px-[32px]"
             >
               View Collection
             </Button>
+            </Link>
           </div>
 
           {/* Additional Text */}

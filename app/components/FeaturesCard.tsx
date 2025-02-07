@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface PROPS {
@@ -10,8 +11,7 @@ const FeaturesCard = ({ heading, text, iconPath }: PROPS) => {
   return (
     <div className="text-primary mt-8 md:mt-12 flex flex-col items-start md:items-start justify-start w-full md:w-62 h-auto">
       {/* Icon */}
-      <img src={iconPath} alt="icon" height={24} width={24} className="mb-4" />
-
+      <Image src={iconPath} alt="icon" height={24} width={24} className="mb-4" />
       {/* Heading */}
       <p className="text-h3 font-clash  font-[200] text-left  ">
         {heading}

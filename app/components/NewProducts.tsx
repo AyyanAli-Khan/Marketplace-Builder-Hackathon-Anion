@@ -47,7 +47,7 @@ const NewProducts = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 items-center">
         {products &&
           products?.map((item: Product, index) => (
-            <Link key={index} href={"/products/" + item.slug.current}>
+            <Link key={index}  href={"/products/" + item.slug.current}>
               <NewProductCard
                 key={index}
                 src={item.image_url}

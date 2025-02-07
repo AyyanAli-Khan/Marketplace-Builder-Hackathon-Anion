@@ -59,6 +59,7 @@ const Header = () => {
               {cart.length}
             </Badge>
           )}
+          <Link href={'/profile'}>
           <Image
             className="cursor-pointer"
             src="/icons/user-avatar.png"
@@ -66,6 +67,7 @@ const Header = () => {
             height={20}
             width={20}
           />
+          </Link>
         </div>
 
         {/* Mobile Actions: Search + Hamburger */}

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
@@ -66,19 +67,24 @@ const Footer = () => {
           <p className="text-sm font-satoshi font-[200]">Copyright 2022 Avion LTD</p>
           <div className="flex space-x-4 mt-4 lg:mt-0">
             <a href="#" aria-label="LinkedIn">
-              <img src="/icons/linkedin.png" alt="LinkedIn" className="w-5 h-5" />
+              <Image src="/icons/linkedin.png" height={20}
+                width={20} alt="LinkedIn" className="w-5 h-5" />
             </a>
             <a href="#" aria-label="Facebook">
-              <img src="/icons/facebook.png" alt="Facebook" className="w-5 h-5" />
+              <Image src="/icons/facebook.png" height={20}
+                width={20} alt="Facebook" className="w-5 h-5" />
             </a>
             <a href="#" aria-label="Instagram">
-              <img src="/icons/instagram.png" alt="Instagram" className="w-5 h-5" />
+              <Image src="/icons/instagram.png" height={20}
+                width={20} alt="Instagram" className="w-5 h-5" />
             </a>
             <a href="#" aria-label="Skype">
-              <img src="/icons/skype.png" alt="Skype" className="w-5 h-5" />
+              <Image src="/icons/skype.png" height={20}
+                width={20} alt="Skype" className="w-5 h-5" />
             </a>
             <a href="#" aria-label="Pinterest">
-              <img src="/icons/pinterest.png" alt="Pinterest" className="w-5 h-5" />
+              <Image src="/icons/pinterest.png" height={20}
+                width={20} alt="Pinterest" className="w-5 h-5" />
             </a>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default function ProductListFooter() {
@@ -21,22 +22,28 @@ export default function ProductListFooter() {
           <h5 className="text-h5 font-clash font-[200] mb-4">Social links</h5>
           <div className="flex space-x-4">
             <a href="#" aria-label="LinkedIn">
-              <img src="/icons/linkedin.png" alt="LinkedIn" className="w-[24px] h-[24px]" />
+              <Image src="/icons/linkedin.png" alt="LinkedIn" className="w-[24px] h-[24px]" height={20}
+                width={20} />
             </a>
             <a href="#" aria-label="Facebook">
-              <img src="/icons/facebook.png" alt="Facebook" className="w-[24px] h-[24px]" />
+              <Image src="/icons/facebook.png" alt="Facebook" className="w-[24px] h-[24px]" height={20}
+                width={20} />
             </a>
             <a href="#" aria-label="Instagram">
-              <img src="/icons/instagram.png" alt="Instagram" className="w-[24px] h-[24px]" />
+              <Image src="/icons/instagram.png" alt="Instagram" className="w-[24px] h-[24px]" height={20}
+                width={20} />
             </a>
             <a href="#" aria-label="Skype">
-              <img src="/icons/skype.png" alt="Skype" className="w-[24px] h-[24px]" />
+              <Image src="/icons/skype.png" alt="Skype" className="w-[24px] h-[24px]" height={20}
+                width={20} />
             </a>
             <a href="#" aria-label="Twitter">
-              <img src="/icons/twitter.png" alt="Twitter" className="w-5 h-5" />
+              <Image src="/icons/twitter.png" alt="Twitter" className="w-5 h-5" height={20}
+                width={20} />
             </a>
             <a href="#" aria-label="Pinterest">
-              <img src="/icons/pinterest.png" alt="Pinterest" className="w-5 h-5" />
+              <Image src="/icons/pinterest.png" alt="Pinterest" className="w-5 h-5" height={20}
+                width={20} />
             </a>
           </div>
         </div>
